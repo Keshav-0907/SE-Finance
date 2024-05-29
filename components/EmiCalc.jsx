@@ -61,11 +61,13 @@ const EmiCalc = () => {
   };
 
   return (
-    <div className="bg-[#F2F1F0] h-full w-full flex shadow-lg py-10">
-      <div className="flex flex-col w-1/2 px-10 justify-around">
-        <div>
-          <div className="flex items-center justify-between">
-            <div className="text-lg font-semibold">1. Required Loan Amount</div>
+    <div className="bg-[#F2F1F0] h-fit w-fit flex shadow-lg p-10 md:flex-row flex-col md:gap-0 gap-10">
+      <div className="flex flex-col md:gap-0 gap-5 md:w-1/2 md:px-10 px-3 justify-around">
+        <div className="flex gap-2 flex-col">
+          <div className="flex justify-between gap-2 md:flex-row flex-col">
+            <div className="md:text-lg font-semibold">
+              1. Required Loan Amount
+            </div>
             <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-2">
               <span className="text-gray-700">₹</span>
               <input
@@ -93,7 +95,7 @@ const EmiCalc = () => {
             <div>Max 1Cr</div>
           </div>
         </div>
-        <div>
+        <div className="flex gap-2 flex-col">
           <div className="flex items-center justify-between">
             <div className="text-lg font-semibold">2. Interest Rate</div>
             <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-2">
@@ -123,7 +125,7 @@ const EmiCalc = () => {
             <div>Max 30%</div>
           </div>
         </div>
-        <div>
+        <div className="flex gap-2 flex-col">
           <div className="flex items-center justify-between">
             <div className="text-lg font-semibold">3. Loan Tenure</div>
             <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-2">
@@ -153,22 +155,33 @@ const EmiCalc = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center flex-col">
-        <Doughnut data={data} />
-        <div>
-          <div className="flex items-center gap-3">
-            <div className="text-lg font-semibold">EMI</div>
-            <div className="text-3xl font-semibold">
-              ₹{numberWithCommas(monthlyEMI.toFixed(2))}{" "}
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="text-lg font-semibold">Total Interest Payable</div>
-            <div className="text-3xl font-semibold">
-              ₹{numberWithCommas(totalInterestPayable.toFixed(2))}{" "}
-            </div>
-          </div>
+      <div className="flex justify-center items-center flex-col gap-4 md:w-1/2">
+        <div className="">
+          <Doughnut data={data} />
         </div>
+        
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-2">
+          <thead className="text-gray-700 uppercase bg-gray-50 ">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Monthly EMI
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Total Payable
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="px-6 py-4">
+                {numberWithCommas(monthlyEMI.toFixed(2))}
+              </td>
+              <td className="px-6 py-4">
+                {numberWithCommas(totalInterestPayable.toFixed(2))}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

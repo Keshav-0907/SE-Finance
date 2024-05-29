@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import React from "react";
 
 const HomeLoan = () => {
@@ -24,7 +25,7 @@ const HomeLoan = () => {
     },
   ];
   return (
-    <div className="py-28 px-10">
+    <><div className="py-28 px-10">
       <div className="text-4xl font-semibold py-4">
         <div>Home Loan</div>
         <div className="bg-[#F5993C] h-1 w-full"></div>
@@ -46,11 +47,11 @@ const HomeLoan = () => {
         online process, you can enjoy ease and convenience of a quick loan
         processing and get your Home Loan sanction letter within 10 minutes.
       </div>
-      <div>
+      <div className="py-2">
         <div className="text-3xl font-semibold">Home Loan Details</div>
-        <div className="relative overflow-x-auto py-8 px-10">
+        <div className="relative overflow-x-auto py-8 md:px-10 px-0">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
-            <thead className="text-gray-700 uppercase bg-gray-50 ">
+            <thead className="text-gray-700 uppercase bg-gray-200 ">
               <tr>
                 <th scope="col" className="px-6 py-3">
                   Product name
@@ -64,9 +65,7 @@ const HomeLoan = () => {
               {HomeLoanData.map((product, index) => (
                 <tr
                   key={index}
-                  className={`bg-white border-b text-black  ${
-                    index % 2 === 0 ? "" : "bg-gray-50 "
-                  }`}
+                  className={`bg-white border-b text-black  ${index % 2 === 0 ? "" : "bg-gray-50 "}`}
                 >
                   <td className="px-6 py-4">{product.title}</td>
                   <td className="px-6 py-4">{product.description}</td>
@@ -80,13 +79,12 @@ const HomeLoan = () => {
         <div className="text-3xl font-semibold">
           Features and Benefits of a Home Loan
         </div>
-        <div className="flex justify-between py-10 px-10">
-          <div className="flex justify-center items-center flex-col">
+        <div className="flex justify-between py-10 md:px-10 px-0 md:flex-row flex-col gap-8">
+          <div className="flex md:justify-center md:gap-0 gap-4 items-center md:flex-col">
             <img
               src="https://www.kotak.com/content/dam/Kotak/svg-icons/loans/personal-loan/functionality-offers.svg"
-              alt="err"
-            />
-            <div className="flex flex-col text-center">
+              alt="err" />
+            <div className="flex flex-col md:text-center">
               <span className="text-[#F5993C] font-semibold">
                 {" "}
                 Attractive Interest Rate{" "}
@@ -94,13 +92,12 @@ const HomeLoan = () => {
               <span className="text-sm"> Rates linked to RBI's repo rates </span>
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex md:justify-center md:gap-0 gap-4 items-center md:flex-col">
             <img
               src="https://www.kotak.com/content/dam/Kotak/svg-icons/minimal-document.svg"
               alt="err"
-              className="max-w-20"
-            />
-            <div className="flex flex-col text-center">
+              className="max-w-20" />
+            <div className="flex flex-col md:text-center">
               <span className="text-[#F5993C] font-semibold">
                 {" "}
                 Minimal Documentation{" "}
@@ -108,13 +105,12 @@ const HomeLoan = () => {
               <span className="text-sm"> Hassle free and quick documention </span>
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex md:justify-center md:gap-0 gap-4 items-center md:flex-col">
             <img
               src="https://www.kotak.com/content/dam/Kotak/svg-icons/minimal-document.svg"
               alt="err"
-              className="max-w-20"
-            />
-            <div className="flex flex-col text-center">
+              className="max-w-20" />
+            <div className="flex flex-col md:text-center">
               <span className="text-[#F5993C] font-semibold">
                 {" "}
                 Minimal Documentation{" "}
@@ -122,12 +118,11 @@ const HomeLoan = () => {
               <span className="text-sm"> Hassle free and quick documention </span>
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col">
+          <div className="flex md:justify-center md:gap-0 gap-4 items-center md:flex-col">
             <img
               src="https://www.kotak.com/content/dam/Kotak/svg-icons/loans/personal-loan/functionality-offers.svg"
-              alt="err"
-            />
-            <div className="flex flex-col text-center">
+              alt="err" />
+            <div className="flex flex-col md:text-center">
               <span className="text-[#F5993C] font-semibold">
                 {" "}
                 Attractive Interest Rate{" "}
@@ -137,7 +132,7 @@ const HomeLoan = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div><Footer /></>
   );
 };
 

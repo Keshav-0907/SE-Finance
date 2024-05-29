@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import ApplyNow from "./ApplyNow";
+import Footer from "./Footer";
 
 const servicesData = [
   {
@@ -45,7 +46,10 @@ const Services = () => {
       <div className="text-4xl py-8 font-semibold">Our Services</div>
       <div className="flex flex-col gap-10">
         {servicesData.map((service, index) => (
-          <div className="flex w-full md:flex-row  flex-col" key={index}>
+          <div
+            className="flex w-full md:flex-row py-2 rounded-xl flex-col hover:bg-slate-100"
+            key={index}
+          >
             {index % 2 === 0 ? (
               <>
                 <div className="md:w-2/6 flex items-center justify-center">
@@ -56,7 +60,9 @@ const Services = () => {
                   />
                 </div>
                 <div className="md:w-4/6 flex flex-col gap-2 justify-center p-3">
-                  <div className="md:text-3xl text-2xl md:font-normal font-semibold">{service.title}</div>
+                  <div className="md:text-3xl text-2xl md:font-normal font-semibold">
+                    {service.title}
+                  </div>
                   <div className="text-sm text-gray-600">
                     {service.description}
                   </div>
@@ -77,7 +83,9 @@ const Services = () => {
               <>
                 <div className="flex md:flex-row flex-col-reverse">
                   <div className="md:w-4/6 flex flex-col gap-2 py-3 justify-center p-3">
-                    <div className="md:text-3xl text-2xl md:font-normal font-semibold">{service.title}</div>
+                    <div className="md:text-3xl text-2xl md:font-normal font-semibold">
+                      {service.title}
+                    </div>
                     <div className="text-sm text-gray-600">
                       {service.description}
                     </div>
