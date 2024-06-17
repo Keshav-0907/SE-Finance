@@ -3,8 +3,18 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { ChevronRight, LandPlot, Home, Handshake } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import ApplyNow from "./ApplyNow";
+
 
 const Hero = () => {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+
+  const toggleApply = () => {
+    setIsApplyOpen(!isApplyOpen);
+  };
+
+
   return (
     <div className="md:py-16 pt-14 bg-[#F2F1F0] relative w-full">
       <div className="flex w-full md:px-6 px-4 md:flex-row flex-col">
@@ -30,7 +40,7 @@ const Hero = () => {
           <img src="/hero.png" alt="hero" className="" />
         </div>
         <div className="md:hidden flex p-4">
-          <div className="bg-[#F5993C] text-white px-4 py-2 rounded-full">
+          <div onClick={toggleApply} className="bg-[#F5993C] text-white px-4 py-2 rounded-full">
             Apply Now
           </div>
           <div className="px-4 py-2 rounded-full flex items-center justify-center">
@@ -87,6 +97,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {isApplyOpen && <ApplyNow toggleApply={toggleApply} />}
     </div>
   );
 };

@@ -25,7 +25,7 @@ const HomeLoan = () => {
     },
   ];
   return (
-    <><div className="py-28 px-10">
+    <><div className="py-10 px-10">
       <div className="text-4xl font-semibold py-4">
         <div>Home Loan</div>
         <div className="bg-[#F5993C] h-1 w-full"></div>

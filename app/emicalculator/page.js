@@ -4,7 +4,7 @@ import React from 'react'
 
 const EmiCalculator = () => {
     return (
-        <><div className='py-24 relative'>
+        <><div className='py-10 relative'>
             <div className='flex flex-col items-center py-10 md:px-2 px-5'>
                 <div className='text-4xl font-semibold'>
                     Loan EMI Calculator

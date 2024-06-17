@@ -99,7 +99,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="md:px-10 px-5 py-2 flex flex-col gap-2 bg-[#F2F1F0] fixed top-0 w-full z-10 shadow-md">
+    <div className="md:px-10 px-5 py-2 flex flex-col gap-2 bg-[#F2F1F0] w-full z-10 shadow-md">
       <div className="flex justify-between text-sm">
         <div className="flex gap-1 hover:bg-[#ffd4aa] py-1 px-2 rounded-full cursor-pointer">
           <Phone color="#F5993C" size={20} />{" "}

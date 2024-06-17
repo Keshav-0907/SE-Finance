@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="py-16 h-screen">
+    <div className="h-screen">
       <Hero/>
       <StatsBanner/>
       <Services/>
